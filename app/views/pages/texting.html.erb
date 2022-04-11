@@ -1,0 +1,15 @@
+<script type="text/javascript">
+ 
+    function generer_password(champ_cible) {
+        var ok = 'a zertyuiop qsd fghjkl mwx cvbn';
+        var pass = '';
+        longueur = 200;
+        for(i=0;i<longueur;i++){
+            var wpos = Math.round(Math.random()*ok.length);
+            pass+=ok.substring(wpos,wpos+1);
+        }
+        document.getElementById(champ_cible).value = pass;
+    }
+</script>
+ <textarea rows="10" cols="33" name="password" id="password" type="text"></textarea>
+       <input type="button" name="generer" value="Générer" onclick="javascript:generer_password('password');" />

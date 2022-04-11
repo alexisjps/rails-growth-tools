@@ -1,0 +1,8 @@
+<h1>Compteur de caractères pour SMS</h1>
+<textarea id="zoneTexte"></textarea>
+<p id="compte">0</p>
+<script>
+    document.getElementById('zoneTexte').addEventListener('keyup', function() {
+        document.getElementById('compte').innerHTML = zoneTexte.value.length;
+    });
+</script>
