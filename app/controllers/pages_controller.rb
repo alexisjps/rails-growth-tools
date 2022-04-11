@@ -5,4 +5,6 @@ class PagesController < ApplicationController
     end
     def texting
     end
+    def home
+    end
 end

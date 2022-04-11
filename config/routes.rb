@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'compte-caracteres-sms', to: 'pages#sms'
   get 'compteur-mots', to: 'pages#word'
   get 'generateur-texte', to: 'pages#texting'
+  get '', to: 'pages#home'
 end
