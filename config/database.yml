@@ -1,22 +1,66 @@
- default: &default
-   adapter: postgresql
-   encoding: unicode
-   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-   timeout: 5000
+#  default: &default
+#    adapter: postgresql
+#    encoding: unicode
+#    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#    timeout: 5000
 
- development:
-   <<: *default
-   database: myapp_dev #Nom de base de données arbitraire
+#  development:
+#    <<: *default
+#    database: myapp_dev #Nom de base de données arbitraire
 
- test:
-   <<: *default
-   database: myapp_sandbox #Nom de base de données arbitraire
+#  test:
+#    <<: *default
+#    database: myapp_sandbox #Nom de base de données arbitraire
 
- production:
-   <<: *default
-   database: myapp_production #Nom de base de données arbitraire
-   username: alexisjps #Tout nom d'utilisateur
-   password: request.env['DB_PASSWORD'] #Tout mot de passe
-   adapter: postgresql
-   encoding: unicode
-   pool:  <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#  production:
+#    <<: *default
+#    database: myapp_production #Nom de base de données arbitraire
+#    username: alexisjps #Tout nom d'utilisateur
+#    password: request.env['DB_PASSWORD'] #Tout mot de passe
+#    adapter: postgresql
+#    encoding: unicode
+#    pool:  <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: metals-directory_development
+  pool: 5
+  username: 
+  password: 
+  template: template0
+  host: localhost
+  port: 5432
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: metals-directory_test
+  pool: 5
+  username: 
+  password: 
+  template: template0
+  host: localhost
+  port: 5432
+
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: metals-directory_production
+  pool: 5
+  username:
+  password:
+  template: template0
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: metals-directory_production
+  pool: 5
+  username:
+  password:
+  template: template0
+  host: localhost
+
+cucumber:
+  <<: *test

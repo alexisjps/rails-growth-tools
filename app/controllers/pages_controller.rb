@@ -7,4 +7,6 @@ class PagesController < ApplicationController
     end
     def home
     end
+    def image
+    end
 end
